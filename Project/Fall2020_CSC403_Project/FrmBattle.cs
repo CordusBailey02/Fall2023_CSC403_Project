@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Fall2020_CSC403_Project {
     public partial class FrmBattle : Form {
@@ -11,14 +12,24 @@ namespace Fall2020_CSC403_Project {
         public bool canClose = false;
         private Enemy enemy;
         private Player player;
+        private FrmInventory inventory;
 
         private FrmBattle() {
             InitializeComponent();
             player = Game.player;
+            // Registers the event handler for this function to close the window
             this.FormClosing += handleClosingForm;
         }
 
-        public void Setup() {
+        public void Setup(FrmInventory inv) {
+            // Gives us access to the inventory from FrmBattle
+            inventory = inv;
+
+            // Counts the number of potions in the inventory.myPotions[]; i.e. not null
+            // Sets the label in FrmBattle to display remaining potions
+            int result = inventory.myPotions.Count(s => s != null);
+            labelPotionRemain.Text = "Potions Remaining: " + result;
+
             // update for this enemy
             picEnemy.BackgroundImage = enemy.Img;
             picEnemy.Refresh();
@@ -44,11 +55,12 @@ namespace Fall2020_CSC403_Project {
             tmrFinalBattle.Enabled = true;
         }
 
-        public static FrmBattle GetInstance(Enemy enemy) {
+        public static FrmBattle GetInstance(Enemy enemy, FrmInventory inv) {
             if (instance == null) {
                 instance = new FrmBattle();
                 instance.enemy = enemy;
-                instance.Setup();
+                // Passes the inv to Setup so we can access it later
+                instance.Setup(inv);
             }
             return instance;
         }
@@ -103,8 +115,8 @@ namespace Fall2020_CSC403_Project {
                     Close();
                 }
             }
+            // Lets the enemy still attack the player if the heavy attack wasn't successful
             enemy.OnAttack(-2);
-            UpdateHealthBars();
             UpdateHealthBars();
             if (player.Health <= 0 || enemy.Health <= 0)
             {
@@ -166,5 +178,41 @@ namespace Fall2020_CSC403_Project {
             }
         }
 
+        private void btnUsePotion_Click(object sender, EventArgs e)
+        {
+            // Uses the potions from let to right in the invetory by looping through myPotions[]
+            for(int i = 0; i < inventory.myPotions.Length; i++)
+            {
+                // Finds the potion by finding an instance that isn't null
+                if (inventory.myPotions[i] != null)
+                {
+                    // Gets the healing power of the potion
+                    Potion pot = inventory.myPotions[i];
+                    int healthAdd = pot.HealingPower;
+                    // Prevents the potion from adding more than Max player health
+                    if(!((player.Health + healthAdd) > player.MaxHealth))
+                    {
+                        // Adds health to player, removes potions, updates potion count, then updates healthbars
+                        player.AlterHealth(healthAdd);
+                        updatePotions(i);
+                    }
+                    else if(player.Health != player.MaxHealth)
+                    {
+                        player.Health = player.MaxHealth;
+                        updatePotions(i);
+                        
+                    }
+                    break;
+                }
+            }
+        }
+
+        private void updatePotions(int i)
+        {
+            inventory.removePotion(i);
+            int result = inventory.myPotions.Count(s => s != null);
+            labelPotionRemain.Text = "Potions Remaining: " + result;
+            UpdateHealthBars();
+        }
     }
 }

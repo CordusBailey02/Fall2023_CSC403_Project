@@ -36,6 +36,8 @@
             this.btnHeavyAttack = new System.Windows.Forms.Button();
             this.btnDodge = new System.Windows.Forms.Button();
             this.btnFlee = new System.Windows.Forms.Button();
+            this.btnUsePotion = new System.Windows.Forms.Button();
+            this.labelPotionRemain = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -43,6 +45,7 @@
             // 
             // btnLightAttack
             // 
+            this.btnLightAttack.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLightAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLightAttack.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnLightAttack.Location = new System.Drawing.Point(73, 760);
@@ -51,7 +54,7 @@
             this.btnLightAttack.Size = new System.Drawing.Size(256, 83);
             this.btnLightAttack.TabIndex = 2;
             this.btnLightAttack.Text = "Light Attack";
-            this.btnLightAttack.UseVisualStyleBackColor = true;
+            this.btnLightAttack.UseVisualStyleBackColor = false;
             this.btnLightAttack.Click += new System.EventHandler(this.btnLightAttack_Click);
             // 
             // lblPlayerHealthFull
@@ -141,44 +144,74 @@
             // 
             // btnHeavyAttack
             // 
+            this.btnHeavyAttack.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnHeavyAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnHeavyAttack.Location = new System.Drawing.Point(399, 760);
             this.btnHeavyAttack.Name = "btnHeavyAttack";
             this.btnHeavyAttack.Size = new System.Drawing.Size(251, 83);
             this.btnHeavyAttack.TabIndex = 8;
             this.btnHeavyAttack.Text = "Heavy Attack";
-            this.btnHeavyAttack.UseVisualStyleBackColor = true;
+            this.btnHeavyAttack.UseVisualStyleBackColor = false;
             this.btnHeavyAttack.Click += new System.EventHandler(this.btnHeavyAttack_Click);
             // 
             // btnDodge
             // 
+            this.btnDodge.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDodge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnDodge.Location = new System.Drawing.Point(73, 872);
             this.btnDodge.Name = "btnDodge";
             this.btnDodge.Size = new System.Drawing.Size(256, 83);
             this.btnDodge.TabIndex = 9;
             this.btnDodge.Text = "Dodge";
-            this.btnDodge.UseVisualStyleBackColor = true;
+            this.btnDodge.UseVisualStyleBackColor = false;
             this.btnDodge.Click += new System.EventHandler(this.btnDodge_Click);
             // 
             // btnFlee
             // 
+            this.btnFlee.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFlee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnFlee.Location = new System.Drawing.Point(399, 872);
             this.btnFlee.Name = "btnFlee";
             this.btnFlee.Size = new System.Drawing.Size(251, 83);
             this.btnFlee.TabIndex = 10;
             this.btnFlee.Text = "Flee";
-            this.btnFlee.UseVisualStyleBackColor = true;
+            this.btnFlee.UseVisualStyleBackColor = false;
             this.btnFlee.Click += new System.EventHandler(this.btnFlee_Click);
+            // 
+            // btnUsePotion
+            // 
+            this.btnUsePotion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUsePotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnUsePotion.Location = new System.Drawing.Point(73, 996);
+            this.btnUsePotion.Name = "btnUsePotion";
+            this.btnUsePotion.Size = new System.Drawing.Size(256, 76);
+            this.btnUsePotion.TabIndex = 11;
+            this.btnUsePotion.Text = "Use Potion";
+            this.btnUsePotion.UseVisualStyleBackColor = false;
+            this.btnUsePotion.Click += new System.EventHandler(this.btnUsePotion_Click);
+            // 
+            // labelPotionRemain
+            // 
+            this.labelPotionRemain.AutoSize = true;
+            this.labelPotionRemain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelPotionRemain.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.labelPotionRemain.Location = new System.Drawing.Point(37, 1093);
+            this.labelPotionRemain.Name = "labelPotionRemain";
+            this.labelPotionRemain.Size = new System.Drawing.Size(350, 44);
+            this.labelPotionRemain.TabIndex = 12;
+            this.labelPotionRemain.Text = "Potions Remaining:";
             // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1644, 1160);
+            this.Controls.Add(this.labelPotionRemain);
+            this.Controls.Add(this.btnUsePotion);
             this.Controls.Add(this.picBossBattle);
             this.Controls.Add(this.lblEnemyHealthFull);
             this.Controls.Add(this.label2);
@@ -199,6 +232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 
@@ -216,5 +250,7 @@
         private System.Windows.Forms.Button btnHeavyAttack;
         private System.Windows.Forms.Button btnDodge;
         private System.Windows.Forms.Button btnFlee;
+        private System.Windows.Forms.Button btnUsePotion;
+        private System.Windows.Forms.Label labelPotionRemain;
     }
 }
