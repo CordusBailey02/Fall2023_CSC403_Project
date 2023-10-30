@@ -58,7 +58,7 @@
     <Compile Include="FrmBattle.Designer.cs">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </Compile>
-   <Compile Include="FrmDeathScreen.cs">
+    <Compile Include="FrmDeathScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDeathScreen.Designer.cs">
