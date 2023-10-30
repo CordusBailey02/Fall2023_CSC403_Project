@@ -15,6 +15,9 @@ namespace Fall2020_CSC403_Project {
             // We must specify each color for the components or they default to the color of the form
       //Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+
+      Application.Run(new CharacterSelect());
+  
             //Here is where the difficulty menu needs to pop up
             DifficultyForm difficulty = new DifficultyForm(); 
       Application.Run(difficulty);

@@ -1,10 +1,14 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
+    List<string> playerMovements = new List<string>();
     private Player player;
     private FrmInventory inventory;
         private Potion potion;
@@ -43,7 +47,9 @@ namespace Fall2020_CSC403_Project {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
 
-            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
+      System.Media.SoundPlayer playersound = new System.Media.SoundPlayer(Properties.Resources.power_rangers_theme_instrumental);
+      playersound.Play();
+      player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
@@ -141,12 +147,14 @@ namespace Fall2020_CSC403_Project {
     }
     
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+   
       switch (e.KeyCode) {
         case Keys.Left:
-          player.GoLeft();
-          break;
+           player.GoLeft();   
+        break;
 
         case Keys.Right:
+            
           player.GoRight();
           break;
 
@@ -170,9 +178,10 @@ namespace Fall2020_CSC403_Project {
 
         default:
           player.ResetMoveSpeed();
-          break;
+         break;
       }
     }
+
 
     private void lblInGameTime_Click(object sender, EventArgs e) {
 

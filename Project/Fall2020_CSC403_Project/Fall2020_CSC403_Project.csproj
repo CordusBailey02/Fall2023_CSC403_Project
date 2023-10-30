@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterSelect.Designer.cs">
+      <DependentUpon>CharacterSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="DifficultyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CharacterSelect.resx">
+      <DependentUpon>CharacterSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DifficultyForm.resx">
       <DependentUpon>DifficultyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +156,24 @@
       <Project>{F1E60F80-1868-4FE5-991B-FDDCFAF9B16B}</Project>
       <Name>MyGameLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow_left.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow Ranger Run Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow Ranger Idle Fight .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue Ranger Idle Fight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Ranger Idle Fight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-rangers-theme-instrumental.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\potion.ico" />
