@@ -1,11 +1,18 @@
 ﻿using Fall2020_CSC403_Project.code;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
+    List<string> playerMovements = new List<string>();
     private Player player;
+    private FrmInventory inventory;
+        private Potion potion;
+        private Weapon weapon;
 
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
@@ -15,14 +22,33 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
 
-    public FrmLevel() {
-      InitializeComponent();
+    public FrmLevel(FrmInventory inv) {
+            // Gives us access to the inventory fields in the main map
+            this.inventory = inv;
+
+            // Creates a potion and puts it in the inventory
+            potion = new Potion("Health Potion", 3, "Heals For 3 Health!");
+            potion.Img = global::Fall2020_CSC403_Project.Properties.Resources.potion;
+            inventory.addPotion(potion);
+            inventory.addPotion(potion);
+            inventory.addPotion(potion);
+            inventory.addPotion(potion);
+            inventory.addPotion(potion);
+
+            // Creates a sword and puts it in the inventory
+            //weapon = new Weapon("Sword1", 5, "Sword that does 5 damage");
+            //weapon.Img = global::Fall2020_CSC403_Project.Properties.Resources.sword1;
+            //inventory.addWeapon(weapon);
+
+            InitializeComponent();
     }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
 
+      System.Media.SoundPlayer playersound = new System.Media.SoundPlayer(Properties.Resources.power_rangers_theme_instrumental);
+      playersound.Play();
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
@@ -31,8 +57,11 @@ namespace Fall2020_CSC403_Project {
       bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+            // Gives the player object an Img and sets up the stats for the inventory
+            player.Img = CharacterSelect.characterPicked;
+            inventory.displayPlayerStats(player);
 
-      bossKoolaid.Color = Color.Red;
+            bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
       enemyCheeto.Color = Color.FromArgb(255, 245, 161);
 
@@ -107,21 +136,25 @@ namespace Fall2020_CSC403_Project {
     private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
-      frmBattle = FrmBattle.GetInstance(enemy);
+            // Passes the inventory to FrmBattle to be used later
+      frmBattle = FrmBattle.GetInstance(enemy, inventory);
       frmBattle.Show();
 
       if (enemy == bossKoolaid) {
         frmBattle.SetupForBossBattle();
       }
-    }
 
+    }
+    
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+   
       switch (e.KeyCode) {
         case Keys.Left:
-          player.GoLeft();
-          break;
+           player.GoLeft();   
+        break;
 
         case Keys.Right:
+            
           player.GoRight();
           break;
 
@@ -132,15 +165,31 @@ namespace Fall2020_CSC403_Project {
         case Keys.Down:
           player.GoDown();
           break;
+                // Adds a keybind for the inventory to be opened; the I key
+                case Keys.I:
+                    inventory.displayPlayerStats(player);
+                    inventory.ShowDialog(this);
+                    break;
+
+        //Add a case to close the game if the esc key is pressed.
+        case Keys.Escape:
+          this.Close();
+          break;
 
         default:
           player.ResetMoveSpeed();
-          break;
+         break;
       }
     }
+
 
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-  }
+
+        private void ExitGameBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

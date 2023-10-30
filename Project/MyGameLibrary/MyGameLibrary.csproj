@@ -51,8 +51,11 @@
     <Compile Include="Game.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Potion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vector2.cs" />
+	<Compile Include="NewDifficulties.cs" />
+    <Compile Include="Weapon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

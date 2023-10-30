@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterSelect.Designer.cs">
+      <DependentUpon>CharacterSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DifficultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DifficultyForm.Designer.cs">
+      <DependentUpon>DifficultyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmBattle.Designer.cs">
       <DependentUpon>FrmBattle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDeathScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeathScreen.Designer.cs">
+      <DependentUpon>FrmDeathScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventory.Designer.cs">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLevel.cs">
       <SubType>Form</SubType>
@@ -60,11 +84,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CharacterSelect.resx">
+      <DependentUpon>CharacterSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DifficultyForm.resx">
+      <DependentUpon>DifficultyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeathScreen.resx">
+      <DependentUpon>FrmDeathScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventory.resx">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel.resx">
       <DependentUpon>FrmLevel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,13 +150,42 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
       <Project>{F1E60F80-1868-4FE5-991B-FDDCFAF9B16B}</Project>
       <Name>MyGameLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow_left.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow Ranger Run Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow Ranger Idle Fight .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue Ranger Idle Fight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black Ranger Idle Fight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-rangers-theme-instrumental.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potion.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
