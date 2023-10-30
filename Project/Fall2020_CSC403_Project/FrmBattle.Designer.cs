@@ -210,8 +210,6 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1644, 1160);
-            this.Controls.Add(this.labelPotionRemain);
-            this.Controls.Add(this.btnUsePotion);
             this.Controls.Add(this.picBossBattle);
             this.Controls.Add(this.lblEnemyHealthFull);
             this.Controls.Add(this.label2);
@@ -223,6 +221,8 @@
             this.Controls.Add(this.btnHeavyAttack);
             this.Controls.Add(this.btnDodge);
             this.Controls.Add(this.btnFlee);
+            this.Controls.Add(this.btnUsePotion);
+            this.Controls.Add(this.labelPotionRemain);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmBattle";

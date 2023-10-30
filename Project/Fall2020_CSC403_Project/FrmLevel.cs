@@ -17,8 +17,6 @@ namespace Fall2020_CSC403_Project {
 
     private DateTime timeBegin;
     private FrmBattle frmBattle;
-    //Create object for the Death Screen form.
-    private FrmDeathScreen frmDeathScreen;
 
     public FrmLevel(FrmInventory inv) {
             // Gives us access to the inventory fields in the main map
@@ -140,13 +138,6 @@ namespace Fall2020_CSC403_Project {
         frmBattle.SetupForBossBattle();
       }
 
-      //Added conditional to check if the player's health reaches zero.
-      if (player.Health == 0)
-            {
-                //If the player's health reaches zero, create a new instance of the Death Screen form and show it to the user.
-                frmDeathScreen = new FrmDeathScreen();
-                frmDeathScreen.Show();
-            }
     }
     
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {

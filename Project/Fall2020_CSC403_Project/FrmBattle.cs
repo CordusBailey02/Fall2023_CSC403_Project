@@ -13,6 +13,8 @@ namespace Fall2020_CSC403_Project {
         private Enemy enemy;
         private Player player;
         private FrmInventory inventory;
+        //Create object for the Death Screen form.
+        private FrmDeathScreen frmDeathScreen;
 
         private FrmBattle() {
             InitializeComponent();
@@ -86,7 +88,15 @@ namespace Fall2020_CSC403_Project {
             UpdateHealthBars();
             // if the player has a dodge buff then remove it for the next turn
             player.RemoveDodgeBuff();
-            if (player.Health <= 0 || enemy.Health <= 0) {
+            if(player.Health <= 0 && (enemy.Health > 0 || enemy.Health < 0))
+            {
+                instance = null;
+                canClose = true;
+                Close();
+                frmDeathScreen = new FrmDeathScreen();
+                frmDeathScreen.Show();
+            }
+            else if (player.Health > 0 && enemy.Health <= 0) {
                 instance = null;
                 canClose = true;
                 Close();
@@ -108,7 +118,15 @@ namespace Fall2020_CSC403_Project {
                 UpdateHealthBars();
                 // if the player has a dodge buff then remove it for the next turn
                 player.RemoveDodgeBuff();
-                if (player.Health <= 0 || enemy.Health <= 0)
+                if (player.Health <= 0 && (enemy.Health > 0 || enemy.Health < 0))
+                {
+                    instance = null;
+                    canClose = true;
+                    Close();
+                    frmDeathScreen = new FrmDeathScreen();
+                    frmDeathScreen.Show();
+                }
+                else if (player.Health > 0 && enemy.Health <= 0)
                 {
                     instance = null;
                     canClose = true;
@@ -143,7 +161,15 @@ namespace Fall2020_CSC403_Project {
             }
 
             UpdateHealthBars();
-            if (player.Health <= 0 || enemy.Health <= 0)
+            if (player.Health <= 0 && (enemy.Health > 0 || enemy.Health < 0))
+            {
+                instance = null;
+                canClose = true;
+                Close();
+                frmDeathScreen = new FrmDeathScreen();
+                frmDeathScreen.Show();
+            }
+            else if (player.Health > 0 && enemy.Health <= 0)
             {
                 instance = null;
                 canClose = true;
@@ -171,8 +197,9 @@ namespace Fall2020_CSC403_Project {
             tmrFinalBattle.Enabled = false;
         }
 
-        private void handleClosingForm(object sender, FormClosingEventArgs e) {
-            if (canClose == false & e.CloseReason == CloseReason.UserClosing)
+        private void handleClosingForm(object sender, FormClosingEventArgs e)
+        {
+            if (canClose == false && e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
             }
