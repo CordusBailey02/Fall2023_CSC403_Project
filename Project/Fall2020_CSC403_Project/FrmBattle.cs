@@ -136,10 +136,19 @@ namespace Fall2020_CSC403_Project {
             // Lets the enemy still attack the player if the heavy attack wasn't successful
             enemy.OnAttack(-2);
             UpdateHealthBars();
-            if (player.Health <= 0 || enemy.Health <= 0)
+            if (player.Health <= 0 && (enemy.Health > 0 || enemy.Health < 0))
             {
                 instance = null;
                 canClose = true;
+                Close();
+                frmDeathScreen = new FrmDeathScreen();
+                frmDeathScreen.Show();
+            }
+            else if (player.Health > 0 && enemy.Health <= 0)
+            {
+                instance = null;
+                canClose = true;
+                Close();
             }
         }
 
