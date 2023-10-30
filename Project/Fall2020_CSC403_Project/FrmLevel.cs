@@ -58,7 +58,7 @@ namespace Fall2020_CSC403_Project {
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
             // Gives the player object an Img and sets up the stats for the inventory
-            player.Img = picPlayer.BackgroundImage;
+            player.Img = CharacterSelect.characterPicked;
             inventory.displayPlayerStats(player);
 
             bossKoolaid.Color = Color.Red;
