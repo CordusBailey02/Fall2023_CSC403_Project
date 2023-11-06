@@ -21,6 +21,7 @@ namespace Fall2020_CSC403_Project {
 
     private DateTime timeBegin;
     private FrmBattle frmBattle;
+    private FrmPause frmPause;
 
     public FrmLevel(FrmInventory inv) {
             // Gives us access to the inventory fields in the main map
@@ -174,6 +175,12 @@ namespace Fall2020_CSC403_Project {
         //Add a case to close the game if the esc key is pressed.
         case Keys.Escape:
           this.Close();
+          break;
+
+        //Add a case to open the pause menu if the p key is pressed.
+        case Keys.P:
+          frmPause = new FrmPause();
+          frmPause.Show();
           break;
 
         default:
