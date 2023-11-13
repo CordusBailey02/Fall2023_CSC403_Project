@@ -58,6 +58,24 @@
     <Compile Include="DifficultyForm.Designer.cs">
       <DependentUpon>DifficultyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLvlHard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLvlHard.Designer.cs">
+      <DependentUpon>FrmLvlHard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLvlNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLvlNormal.Designer.cs">
+      <DependentUpon>FrmLvlNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLvlEasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLvlEasy.Designer.cs">
+      <DependentUpon>FrmLvlEasy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DifficultyForm.resx">
       <DependentUpon>DifficultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLvlHard.resx">
+      <DependentUpon>FrmLvlHard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLvlNormal.resx">
+      <DependentUpon>FrmLvlNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLvlEasy.resx">
+      <DependentUpon>FrmLvlEasy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
@@ -195,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sword1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transition.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

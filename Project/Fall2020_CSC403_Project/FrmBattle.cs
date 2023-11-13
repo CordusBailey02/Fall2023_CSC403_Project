@@ -67,6 +67,20 @@ namespace Fall2020_CSC403_Project {
             return instance;
         }
 
+        public static void GetInstanceFix(Enemy enemy, FrmInventory inv)
+        {
+            if (instance == null)
+            {
+                instance = new FrmBattle();
+                instance.enemy = enemy;
+                // Passes the inv to Setup so we can access it later
+                instance.Setup(inv);
+
+                instance.Close();
+                instance = null;
+            }
+        }
+
         private void UpdateHealthBars() {
             float playerHealthPer = player.Health / (float)player.MaxHealth;
             float enemyHealthPer = enemy.Health / (float)enemy.MaxHealth;
@@ -190,6 +204,8 @@ namespace Fall2020_CSC403_Project {
             player.RemoveDodgeBuff();
             instance = null;
             canClose= true;
+            enemy.AttackEvent -= PlayerDamage;
+            player.AttackEvent -= EnemyDamage;
             Close();
         }
 
