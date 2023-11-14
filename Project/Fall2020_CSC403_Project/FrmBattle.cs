@@ -123,11 +123,7 @@ namespace Fall2020_CSC403_Project {
             int chance = random.Next(11);
             if (chance >= 8) 
             {
-                player.OnAttack(-6);
-                if (enemy.Health > 0)
-                {
-                    enemy.OnAttack(-2);
-                }
+                weaponAttack();
 
                 UpdateHealthBars();
                 // if the player has a dodge buff then remove it for the next turn
@@ -163,6 +159,26 @@ namespace Fall2020_CSC403_Project {
                 instance = null;
                 canClose = true;
                 Close();
+            }
+        }
+
+        private void weaponAttack()
+        {
+            if(inventory.myWeapons[0] != null)
+            {
+                player.OnAttack(-1 * inventory.myWeapons[0].DamagePower);
+                if (enemy.Health > 0)
+                {
+                    enemy.OnAttack(-2);
+                }
+            }
+            else
+            {
+                player.OnAttack(-6);
+                if (enemy.Health > 0)
+                {
+                    enemy.OnAttack(-2);
+                }
             }
         }
 

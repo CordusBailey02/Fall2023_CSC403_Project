@@ -18,8 +18,18 @@ namespace Fall2020_CSC403_Project
         List<string> playerMovements = new List<string>();
         private Player player;
         private FrmInventory inventory;
-        private Potion potion;
-        private Weapon weapon;
+
+        private Potion lesserPotion;
+        private Potion normalPotion;
+        private Potion greaterPotion;
+
+        private NPC[] roomPotions;
+        private PictureBox[] roomPotionsP;
+        private int collPotionIndex;
+        private NPC[] roomWeapons;
+        private PictureBox[] roomWeaponsP;
+        private int collWeaponIndex;
+
         private DateTime timeBegin;
         private FrmBattle frmBattle;
         private FrmPause frmPause;
@@ -57,6 +67,22 @@ namespace Fall2020_CSC403_Project
         public FrmLvlNormal(FrmInventory inv)
         {
             this.inventory = inv;
+
+            lesserPotion = new Potion("Lesser Health Potion");
+            lesserPotion.Img = global::Fall2020_CSC403_Project.Properties.Resources.lesserHealth;
+            normalPotion = new Potion("Normal Health Potion");
+            normalPotion.Img = global::Fall2020_CSC403_Project.Properties.Resources.lesserHealth;
+            greaterPotion = new Potion("Greater Health Potion");
+            greaterPotion.Img = global::Fall2020_CSC403_Project.Properties.Resources.lesserHealth;
+            inventory.addPotion(lesserPotion);
+            inventory.addPotion(normalPotion);
+            inventory.addPotion(greaterPotion);
+
+
+
+            Weapon w = new Weapon("Sword", 6, false, false);
+            w.Img = global::Fall2020_CSC403_Project.Properties.Resources.sword1;
+            inventory.addWeapon(w);
 
             InitializeComponent();
 
@@ -375,6 +401,94 @@ namespace Fall2020_CSC403_Project
             }
         }
 
+        private void createRoomWeapons(Panel curr)
+        {
+            int count = 0;
+            for (int y = 1; y <= Controls.Count; y++)
+            {
+                try
+                {
+                    if (Controls.Find("room" + curr.Name.Substring(4, 1) + "Weapon" + y.ToString(), true)[0] as PictureBox != null)
+                    {
+                        count++;
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+
+            }
+            roomWeapons = new NPC[count];
+            roomWeaponsP = new PictureBox[count];
+            for (int i = 1; i <= count; i++)
+            {
+                try
+                {
+                    PictureBox pic = Controls.Find("room" + curr.Name.Substring(4, 1) + "Weapon" + i.ToString(), true)[0] as PictureBox;
+                    roomWeapons[i - 1] = new NPC(CreatePosition(pic), CreateCollider(pic, ENEMY_PADDING));
+                    roomWeapons[i - 1].Img = pic.BackgroundImage;
+                    roomWeaponsP[i - 1] = pic;
+                    Console.WriteLine("Weapon name: " + pic.Name);
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            if (count == 0)
+            {
+                roomWeapons = new NPC[1];
+                roomWeaponsP = new PictureBox[1];
+                roomWeapons[0] = null;
+                roomWeaponsP[0] = null;
+            }
+        }
+
+        private void createRoomPotions(Panel curr)
+        {
+            int count = 0;
+            for (int y = 1; y <= Controls.Count; y++)
+            {
+                try
+                {
+                    if (Controls.Find("room" + curr.Name.Substring(4, 1) + "Potion" + y.ToString(), true)[0] as PictureBox != null)
+                    {
+                        count++;
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+
+            }
+            roomPotions = new NPC[count];
+            roomPotionsP = new PictureBox[count];
+            for (int i = 1; i <= count; i++)
+            {
+                try
+                {
+                    PictureBox pic = Controls.Find("room" + curr.Name.Substring(4, 1) + "Potion" + i.ToString(), true)[0] as PictureBox;
+                    roomPotions[i - 1] = new NPC(CreatePosition(pic), CreateCollider(pic, ENEMY_PADDING));
+                    roomPotions[i - 1].Img = pic.BackgroundImage;
+                    roomPotionsP[i - 1] = pic;
+                    Console.WriteLine("Potion name: " + pic.Name);
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            if (count == 0)
+            {
+                roomPotions = new NPC[1];
+                roomPotionsP = new PictureBox[1];
+                roomPotions[0] = null;
+                roomPotionsP[0] = null;
+            }
+        }
+
         private void createBorderWalls()
         {
             // Creates the border walls that will be used for each room
@@ -454,6 +568,46 @@ namespace Fall2020_CSC403_Project
             {
                 player.MoveBack();
                 Fight(enemies[collEnemyIndex]);
+            }
+            else if ((roomWeapons.Length > 0 && roomWeapons[0] != null) && HitAWeapon(player))
+            {
+                player.MoveBack();
+                if (inventory.myWeapons.Contains(null))
+                {
+                    String b = roomWeaponsP[collWeaponIndex].Tag.ToString();
+                    Console.WriteLine("Pic tag: " + b);
+                    String[] arrB = b.Split(new string[] { " " }, StringSplitOptions.None);
+                    String name = arrB[0];
+                    int damage = int.Parse(arrB[1]);
+                    bool fire = bool.Parse(arrB[2]);
+                    bool ice = bool.Parse(arrB[3]);
+
+
+                    Weapon w = new Weapon(name, damage, fire, ice);
+                    w.Img = roomWeaponsP[collWeaponIndex].BackgroundImage;
+                    inventory.addWeapon(w);
+
+                    //remove weapon from map
+                    roomWeaponsP[collWeaponIndex].Location = new Point(1200, 1200);
+                    roomWeapons[collWeaponIndex] = new NPC(CreatePosition(roomWeaponsP[collWeaponIndex]), CreateCollider(roomWeaponsP[collWeaponIndex], ENEMY_PADDING));
+                }
+            }
+            else if ((roomPotions.Length > 0 && roomPotions[0] != null) && HitAPotion(player))
+            {
+                player.MoveBack();
+                if (inventory.myPotions.Contains(null))
+                {
+                    String b = roomPotionsP[collPotionIndex].Tag.ToString();
+                    Console.WriteLine("Pic tag: " + b);
+
+                    Potion p = new Potion(b);
+                    p.Img = roomPotionsP[collPotionIndex].BackgroundImage;
+                    inventory.addPotion(p);
+
+                    //remove weapon from map
+                    roomPotionsP[collWeaponIndex].Location = new Point(1200, 1200);
+                    roomPotions[collWeaponIndex] = new NPC(CreatePosition(roomPotionsP[collPotionIndex]), CreateCollider(roomPotionsP[collPotionIndex], ENEMY_PADDING));
+                }
             }
             else if((doors.Length > 0 && doors[0] != null) && HitADoor(player))
             {
@@ -567,6 +721,36 @@ namespace Fall2020_CSC403_Project
             return hitAObst;
         }
 
+        private bool HitAWeapon(Character c)
+        {
+            bool hitAObst = false;
+            for (int t = 0; t < roomWeapons.Length; t++)
+            {
+                if (c.Collider.Intersects(roomWeapons[t].Collider))
+                {
+                    collWeaponIndex = t;
+                    hitAObst = true;
+                    break;
+                }
+            }
+            return hitAObst;
+        }
+
+        private bool HitAPotion(Character c)
+        {
+            bool hitAObst = false;
+            for (int t = 0; t < roomPotions.Length; t++)
+            {
+                if (c.Collider.Intersects(roomPotions[t].Collider))
+                {
+                    collPotionIndex = t;
+                    hitAObst = true;
+                    break;
+                }
+            }
+            return hitAObst;
+        }
+
         private void relocatePlayer(PictureBox entrance)
         {
             player.MoveBack();
@@ -628,6 +812,8 @@ namespace Fall2020_CSC403_Project
             createObsts(cur);
             createEnemies(cur);
             createDoors(cur);
+            createRoomWeapons(cur);
+            createRoomPotions(cur);
         }
 
         private void updateGameScreen(Panel p)
