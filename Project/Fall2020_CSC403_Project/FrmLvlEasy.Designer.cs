@@ -68,6 +68,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.miniMap = new System.Windows.Forms.Panel();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.room3Enemy1 = new System.Windows.Forms.PictureBox();
+            this.room4Enemy1 = new System.Windows.Forms.PictureBox();
             this.room1Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.room1Enemy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.room1Enemy1)).BeginInit();
@@ -100,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fromR3ToR4)).BeginInit();
             this.sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.room3Enemy1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.room4Enemy1)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrPlayerMove
@@ -153,7 +157,7 @@
             // 
             // room1Enemy1
             // 
-            this.room1Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_poisonpacket;
+            this.room1Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.FortnitePumpkin;
             this.room1Enemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.room1Enemy1.Location = new System.Drawing.Point(516, 249);
             this.room1Enemy1.Margin = new System.Windows.Forms.Padding(2);
@@ -220,12 +224,12 @@
             // 
             // room2Enemy1
             // 
-            this.room2Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_poisonpacket;
+            this.room2Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.JustinBieber;
             this.room2Enemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.room2Enemy1.Location = new System.Drawing.Point(908, 363);
             this.room2Enemy1.Margin = new System.Windows.Forms.Padding(2);
             this.room2Enemy1.Name = "room2Enemy1";
-            this.room2Enemy1.Size = new System.Drawing.Size(50, 86);
+            this.room2Enemy1.Size = new System.Drawing.Size(60, 99);
             this.room2Enemy1.TabIndex = 7;
             this.room2Enemy1.TabStop = false;
             // 
@@ -328,7 +332,7 @@
             // 
             // room5Enemy2
             // 
-            this.room5Enemy2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_poisonpacket;
+            this.room5Enemy2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.Joker;
             this.room5Enemy2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.room5Enemy2.Location = new System.Drawing.Point(502, 262);
             this.room5Enemy2.Margin = new System.Windows.Forms.Padding(2);
@@ -339,7 +343,7 @@
             // 
             // room5Enemy1
             // 
-            this.room5Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_koolaid;
+            this.room5Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.RonWeasly;
             this.room5Enemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.room5Enemy1.Location = new System.Drawing.Point(203, 249);
             this.room5Enemy1.Margin = new System.Windows.Forms.Padding(2);
@@ -381,6 +385,7 @@
             // room3Panel
             // 
             this.room3Panel.BackColor = System.Drawing.Color.SteelBlue;
+            this.room3Panel.Controls.Add(this.room3Enemy1);
             this.room3Panel.Controls.Add(this.room3Obstacle1);
             this.room3Panel.Controls.Add(this.toR4FromR3);
             this.room3Panel.Controls.Add(this.fromR2ToR3);
@@ -423,6 +428,7 @@
             // room4Panel
             // 
             this.room4Panel.BackColor = System.Drawing.Color.SteelBlue;
+            this.room4Panel.Controls.Add(this.room4Enemy1);
             this.room4Panel.Controls.Add(this.room4Obstacle1);
             this.room4Panel.Controls.Add(this.fromR5ToR4);
             this.room4Panel.Controls.Add(this.fromR3ToR4);
@@ -512,6 +518,26 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // room3Enemy1
+            // 
+            this.room3Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.Koopa;
+            this.room3Enemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.room3Enemy1.Location = new System.Drawing.Point(913, 285);
+            this.room3Enemy1.Name = "room3Enemy1";
+            this.room3Enemy1.Size = new System.Drawing.Size(100, 99);
+            this.room3Enemy1.TabIndex = 3;
+            this.room3Enemy1.TabStop = false;
+            // 
+            // room4Enemy1
+            // 
+            this.room4Enemy1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.Eyeball;
+            this.room4Enemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.room4Enemy1.Location = new System.Drawing.Point(34, 201);
+            this.room4Enemy1.Name = "room4Enemy1";
+            this.room4Enemy1.Size = new System.Drawing.Size(219, 194);
+            this.room4Enemy1.TabIndex = 3;
+            this.room4Enemy1.TabStop = false;
+            // 
             // FrmLvlEasy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,6 +598,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fromR3ToR4)).EndInit();
             this.sidePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.room3Enemy1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.room4Enemy1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,5 +646,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel miniMap;
         private System.Windows.Forms.PictureBox room1Enemy2;
+        private System.Windows.Forms.PictureBox room3Enemy1;
+        private System.Windows.Forms.PictureBox room4Enemy1;
     }
 }
