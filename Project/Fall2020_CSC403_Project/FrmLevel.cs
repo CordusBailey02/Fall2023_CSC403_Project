@@ -28,13 +28,7 @@ namespace Fall2020_CSC403_Project {
             this.inventory = inv;
 
             // Creates a potion and puts it in the inventory
-            potion = new Potion("Health Potion", 3, "Heals For 3 Health!");
-            potion.Img = global::Fall2020_CSC403_Project.Properties.Resources.potion;
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
+
 
             // Creates a sword and puts it in the inventory
             //weapon = new Weapon("Sword1", 5, "Sword that does 5 damage");
