@@ -900,8 +900,16 @@ namespace Fall2020_CSC403_Project
             player.ResetMoveSpeed();
             player.MoveBack();
             // Passes the inventory to FrmBattle to be used later
-            frmBattle = FrmBattle.GetInstance(enemy, inventory);
-            frmBattle.ShowDialog();
+            if (enemy.Health > 0)
+            {
+                frmBattle = FrmBattle.GetInstance(enemy, inventory);
+                frmBattle.ShowDialog();
+            }
+
+            if (enemy.Health <= 0)
+            {
+                enemy.Img = Properties.Resources.Skull.png;
+            }
         }
 
         private void FightFix(Enemy enemy) 

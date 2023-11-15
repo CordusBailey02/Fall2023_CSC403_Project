@@ -138,7 +138,12 @@ namespace Fall2020_CSC403_Project {
                 frmBattle.Show();
             }
 
-      if (enemy == bossKoolaid && enemy.Health > 0) {
+            if (enemy.Health <= 0)
+            {
+                enemy.Img = Properties.Resources.Skull.png;
+            }
+
+            if (enemy == bossKoolaid && enemy.Health > 0) {
         frmBattle.SetupForBossBattle();
       }
 
