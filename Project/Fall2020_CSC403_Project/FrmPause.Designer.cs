@@ -88,7 +88,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
             this.Controls.Add(this.quitGameBtn);
             this.Controls.Add(this.restartLvlBtn);
             this.Controls.Add(this.saveGameBtn);
