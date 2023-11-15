@@ -874,7 +874,7 @@ namespace Fall2020_CSC403_Project
 
             if (enemy.Health <= 0)
             {
-                enemy.Img = Properties.Resources.Skull.png;
+                enemy.Img = Properties.Resources.Skull;
             }
         }
 
