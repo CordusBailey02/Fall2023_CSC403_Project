@@ -67,6 +67,20 @@ namespace Fall2020_CSC403_Project {
             return instance;
         }
 
+        public static void GetInstanceFix(Enemy enemy, FrmInventory inv)
+        {
+            if (instance == null)
+            {
+                instance = new FrmBattle();
+                instance.enemy = enemy;
+                // Passes the inv to Setup so we can access it later
+                instance.Setup(inv);
+
+                instance.Close();
+                instance = null;
+            }
+        }
+
         private void UpdateHealthBars() {
             float playerHealthPer = player.Health / (float)player.MaxHealth;
             float enemyHealthPer = enemy.Health / (float)enemy.MaxHealth;
@@ -109,11 +123,7 @@ namespace Fall2020_CSC403_Project {
             int chance = random.Next(11);
             if (chance >= 8) 
             {
-                player.OnAttack(-6);
-                if (enemy.Health > 0)
-                {
-                    enemy.OnAttack(-2);
-                }
+                weaponAttack();
 
                 UpdateHealthBars();
                 // if the player has a dodge buff then remove it for the next turn
@@ -149,6 +159,26 @@ namespace Fall2020_CSC403_Project {
                 instance = null;
                 canClose = true;
                 Close();
+            }
+        }
+
+        private void weaponAttack()
+        {
+            if(inventory.myWeapons[0] != null)
+            {
+                player.OnAttack(-1 * inventory.myWeapons[0].DamagePower);
+                if (enemy.Health > 0)
+                {
+                    enemy.OnAttack(-2);
+                }
+            }
+            else
+            {
+                player.OnAttack(-6);
+                if (enemy.Health > 0)
+                {
+                    enemy.OnAttack(-2);
+                }
             }
         }
 
@@ -190,6 +220,8 @@ namespace Fall2020_CSC403_Project {
             player.RemoveDodgeBuff();
             instance = null;
             canClose= true;
+            enemy.AttackEvent -= PlayerDamage;
+            player.AttackEvent -= EnemyDamage;
             Close();
         }
 

@@ -58,6 +58,24 @@
     <Compile Include="DifficultyForm.Designer.cs">
       <DependentUpon>DifficultyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLvlHard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLvlHard.Designer.cs">
+      <DependentUpon>FrmLvlHard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLvlNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLvlNormal.Designer.cs">
+      <DependentUpon>FrmLvlNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLvlEasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLvlEasy.Designer.cs">
+      <DependentUpon>FrmLvlEasy.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DifficultyForm.resx">
       <DependentUpon>DifficultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLvlHard.resx">
+      <DependentUpon>FrmLvlHard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLvlNormal.resx">
+      <DependentUpon>FrmLvlNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLvlEasy.resx">
+      <DependentUpon>FrmLvlEasy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
@@ -195,6 +223,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sword1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cowboy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eyeball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samurai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stormtrooper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beaver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dinosaur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hippo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MrBean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kanye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grinch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TomHanks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RonWeasly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Koopa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Troll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JustinBieber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Putin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SnoopDogg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FortniteRedKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FortnitePumpkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FortniteSkullTrooper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transition.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
