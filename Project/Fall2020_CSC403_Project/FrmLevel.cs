@@ -138,10 +138,13 @@ namespace Fall2020_CSC403_Project {
       player.ResetMoveSpeed();
       player.MoveBack();
             // Passes the inventory to FrmBattle to be used later
-      frmBattle = FrmBattle.GetInstance(enemy, inventory);
-      frmBattle.Show();
+            if (enemy.Health > 0)
+            {
+                frmBattle = FrmBattle.GetInstance(enemy, inventory);
+                frmBattle.Show();
+            }
 
-      if (enemy == bossKoolaid) {
+      if (enemy == bossKoolaid && enemy.Health > 0) {
         frmBattle.SetupForBossBattle();
       }
 
