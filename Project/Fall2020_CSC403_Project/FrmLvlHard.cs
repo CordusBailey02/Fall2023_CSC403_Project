@@ -68,22 +68,6 @@ namespace Fall2020_CSC403_Project
         {
             this.inventory = inv;
 
-            lesserPotion = new Potion("Lesser Health Potion");
-            lesserPotion.Img = global::Fall2020_CSC403_Project.Properties.Resources.lesserHealth;
-            normalPotion = new Potion("Normal Health Potion");
-            normalPotion.Img = global::Fall2020_CSC403_Project.Properties.Resources.lesserHealth;
-            greaterPotion = new Potion("Greater Health Potion");
-            greaterPotion.Img = global::Fall2020_CSC403_Project.Properties.Resources.lesserHealth;
-            inventory.addPotion(lesserPotion);
-            inventory.addPotion(normalPotion);
-            inventory.addPotion(greaterPotion);
-
-
-
-            Weapon w = new Weapon("Sword", 6, false, false);
-            w.Img = global::Fall2020_CSC403_Project.Properties.Resources.sword1;
-            inventory.addWeapon(w);
-
             InitializeComponent();
 
             //this.Size = new Size(1190, 765);
