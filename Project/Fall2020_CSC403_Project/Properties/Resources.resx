@@ -154,10 +154,94 @@
   <data name="Yellow_Ranger_Idle_Fight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Yellow Ranger Idle Fight .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="potion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="lesserHealth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\potion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sword1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sword1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Beaver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Beaver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cowboy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cowboy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dinosaur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dinosaur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Door" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eyeball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eyeball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FortnitePumpkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FortnitePumpkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FortniteRedKnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FortniteRedKnight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FortniteSkullTrooper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FortniteSkullTrooper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grinch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grinch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hippo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hippo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Joker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Joker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JustinBieber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JustinBieber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kanye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kanye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Koopa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Koopa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MrBean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MrBean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Putin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Putin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RonWeasly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RonWeasly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Samurai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Samurai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SnoopDogg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SnoopDogg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stormtrooper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stormtrooper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TomHanks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TomHanks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Troll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Troll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fireSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fireSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greaterHealing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\greaterHealing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iceSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iceSword.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="normalHealth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\normalHealth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

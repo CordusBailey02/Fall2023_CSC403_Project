@@ -21,19 +21,14 @@ namespace Fall2020_CSC403_Project {
 
     private DateTime timeBegin;
     private FrmBattle frmBattle;
+    private FrmPause frmPause;
 
     public FrmLevel(FrmInventory inv) {
             // Gives us access to the inventory fields in the main map
             this.inventory = inv;
 
             // Creates a potion and puts it in the inventory
-            potion = new Potion("Health Potion", 3, "Heals For 3 Health!");
-            potion.Img = global::Fall2020_CSC403_Project.Properties.Resources.potion;
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
-            inventory.addPotion(potion);
+
 
             // Creates a sword and puts it in the inventory
             //weapon = new Weapon("Sword1", 5, "Sword that does 5 damage");
@@ -137,10 +132,18 @@ namespace Fall2020_CSC403_Project {
       player.ResetMoveSpeed();
       player.MoveBack();
             // Passes the inventory to FrmBattle to be used later
-      frmBattle = FrmBattle.GetInstance(enemy, inventory);
-      frmBattle.Show();
+            if (enemy.Health > 0)
+            {
+                frmBattle = FrmBattle.GetInstance(enemy, inventory);
+                frmBattle.Show();
+            }
 
-      if (enemy == bossKoolaid) {
+            if (enemy.Health <= 0)
+            {
+                enemy.Img = Properties.Resources.Skull;
+            }
+
+            if (enemy == bossKoolaid && enemy.Health > 0) {
         frmBattle.SetupForBossBattle();
       }
 
@@ -174,6 +177,12 @@ namespace Fall2020_CSC403_Project {
         //Add a case to close the game if the esc key is pressed.
         case Keys.Escape:
           this.Close();
+          break;
+
+        //Add a case to open the pause menu if the p key is pressed.
+        case Keys.P:
+          frmPause = new FrmPause();
+          frmPause.Show();
           break;
 
         default:

@@ -11,16 +11,26 @@ namespace Fall2020_CSC403_Project.code
     {
         public string Name { get; set; }
         public int HealingPower { get; set; }
-        public string Description { get; set; }
-
         public Image Img { get; set; }
 
 
-        public Potion(string name, int healingPower, string description) 
+        public Potion(string name) 
         {
             this.Name = name;
-            this.HealingPower = healingPower;
-            this.Description = description;
+
+            if(name == "LesserHealthPotion")
+            {
+                this.HealingPower = 5;
+            }
+            else if(name == "NormalHealthPotion")
+            {
+                this.HealingPower = 10;
+            }
+            else
+            {
+                this.HealingPower = 15;
+            }
+
         }
 
     }

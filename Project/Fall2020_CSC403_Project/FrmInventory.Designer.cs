@@ -31,11 +31,26 @@
             this.components = new System.ComponentModel.Container();
             this.potionSlot1 = new System.Windows.Forms.Panel();
             this.invPanel = new System.Windows.Forms.Panel();
-            this.weaponSlot1 = new System.Windows.Forms.Panel();
-            this.weaponSlot5 = new System.Windows.Forms.Panel();
+            this.selectWeaponLabel = new System.Windows.Forms.Label();
+            this.selectWeapon4btn = new System.Windows.Forms.Button();
+            this.selectWeapon3btn = new System.Windows.Forms.Button();
+            this.selectWeapon2btn = new System.Windows.Forms.Button();
+            this.selectWeapon1btn = new System.Windows.Forms.Button();
+            this.disposePotionbtn5 = new System.Windows.Forms.Button();
+            this.disposePotionbtn4 = new System.Windows.Forms.Button();
+            this.disposePotionbtn3 = new System.Windows.Forms.Button();
+            this.disposePotionbtn2 = new System.Windows.Forms.Button();
+            this.disposePotionbtn1 = new System.Windows.Forms.Button();
+            this.usePotion5btn = new System.Windows.Forms.Button();
+            this.usePotion4btn = new System.Windows.Forms.Button();
+            this.usePotion3btn = new System.Windows.Forms.Button();
+            this.usePotion2btn = new System.Windows.Forms.Button();
+            this.usePotion1btn = new System.Windows.Forms.Button();
+            this.selectedWeaponSlot = new System.Windows.Forms.Panel();
             this.weaponSlot4 = new System.Windows.Forms.Panel();
             this.weaponSlot3 = new System.Windows.Forms.Panel();
             this.weaponSlot2 = new System.Windows.Forms.Panel();
+            this.weaponSlot1 = new System.Windows.Forms.Panel();
             this.weaponSectionLabel = new System.Windows.Forms.Label();
             this.potionSectionLabel = new System.Windows.Forms.Label();
             this.potionSlot5 = new System.Windows.Forms.Panel();
@@ -50,11 +65,10 @@
             this.strengthLabel = new System.Windows.Forms.Label();
             this.healthLabel = new System.Windows.Forms.Label();
             this.btnCloseInv = new System.Windows.Forms.Button();
-            this.usePotion1btn = new System.Windows.Forms.Button();
-            this.usePotion2btn = new System.Windows.Forms.Button();
-            this.usePotion3btn = new System.Windows.Forms.Button();
-            this.usePotion4btn = new System.Windows.Forms.Button();
-            this.usePotion5btn = new System.Windows.Forms.Button();
+            this.disposeWeapon1btn = new System.Windows.Forms.Button();
+            this.disposeWeapon2btn = new System.Windows.Forms.Button();
+            this.disposeWeapon3btn = new System.Windows.Forms.Button();
+            this.disposeWeapon4btn = new System.Windows.Forms.Button();
             this.invPanel.SuspendLayout();
             this.statPanel.SuspendLayout();
             this.SuspendLayout();
@@ -73,16 +87,30 @@
             // 
             this.invPanel.BackColor = System.Drawing.Color.CornflowerBlue;
             this.invPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.invPanel.Controls.Add(this.disposeWeapon4btn);
+            this.invPanel.Controls.Add(this.disposeWeapon3btn);
+            this.invPanel.Controls.Add(this.disposeWeapon2btn);
+            this.invPanel.Controls.Add(this.disposeWeapon1btn);
+            this.invPanel.Controls.Add(this.selectWeaponLabel);
+            this.invPanel.Controls.Add(this.selectWeapon4btn);
+            this.invPanel.Controls.Add(this.selectWeapon3btn);
+            this.invPanel.Controls.Add(this.selectWeapon2btn);
+            this.invPanel.Controls.Add(this.selectWeapon1btn);
+            this.invPanel.Controls.Add(this.disposePotionbtn5);
+            this.invPanel.Controls.Add(this.disposePotionbtn4);
+            this.invPanel.Controls.Add(this.disposePotionbtn3);
+            this.invPanel.Controls.Add(this.disposePotionbtn2);
+            this.invPanel.Controls.Add(this.disposePotionbtn1);
             this.invPanel.Controls.Add(this.usePotion5btn);
             this.invPanel.Controls.Add(this.usePotion4btn);
             this.invPanel.Controls.Add(this.usePotion3btn);
             this.invPanel.Controls.Add(this.usePotion2btn);
             this.invPanel.Controls.Add(this.usePotion1btn);
-            this.invPanel.Controls.Add(this.weaponSlot1);
-            this.invPanel.Controls.Add(this.weaponSlot5);
+            this.invPanel.Controls.Add(this.selectedWeaponSlot);
             this.invPanel.Controls.Add(this.weaponSlot4);
             this.invPanel.Controls.Add(this.weaponSlot3);
             this.invPanel.Controls.Add(this.weaponSlot2);
+            this.invPanel.Controls.Add(this.weaponSlot1);
             this.invPanel.Controls.Add(this.weaponSectionLabel);
             this.invPanel.Controls.Add(this.potionSectionLabel);
             this.invPanel.Controls.Add(this.potionSlot1);
@@ -95,51 +123,214 @@
             this.invPanel.Size = new System.Drawing.Size(1545, 597);
             this.invPanel.TabIndex = 1;
             // 
-            // weaponSlot1
+            // selectWeaponLabel
             // 
-            this.weaponSlot1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.weaponSlot1.BackColor = System.Drawing.Color.White;
-            this.weaponSlot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponSlot1.Location = new System.Drawing.Point(18, 357);
-            this.weaponSlot1.Name = "weaponSlot1";
-            this.weaponSlot1.Size = new System.Drawing.Size(131, 108);
-            this.weaponSlot1.TabIndex = 7;
+            this.selectWeaponLabel.AutoSize = true;
+            this.selectWeaponLabel.Location = new System.Drawing.Point(-2, 545);
+            this.selectWeaponLabel.Name = "selectWeaponLabel";
+            this.selectWeaponLabel.Size = new System.Drawing.Size(182, 25);
+            this.selectWeaponLabel.TabIndex = 26;
+            this.selectWeaponLabel.Text = "Selected Weapon";
             // 
-            // weaponSlot5
+            // selectWeapon4btn
             // 
-            this.weaponSlot5.BackColor = System.Drawing.Color.White;
-            this.weaponSlot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponSlot5.Location = new System.Drawing.Point(677, 357);
-            this.weaponSlot5.Name = "weaponSlot5";
-            this.weaponSlot5.Size = new System.Drawing.Size(128, 108);
-            this.weaponSlot5.TabIndex = 11;
+            this.selectWeapon4btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.selectWeapon4btn.Location = new System.Drawing.Point(677, 485);
+            this.selectWeapon4btn.Name = "selectWeapon4btn";
+            this.selectWeapon4btn.Size = new System.Drawing.Size(131, 48);
+            this.selectWeapon4btn.TabIndex = 25;
+            this.selectWeapon4btn.Text = "Select";
+            this.selectWeapon4btn.UseVisualStyleBackColor = false;
+            this.selectWeapon4btn.Click += new System.EventHandler(this.selectWeapon4btn_Click);
+            // 
+            // selectWeapon3btn
+            // 
+            this.selectWeapon3btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.selectWeapon3btn.Location = new System.Drawing.Point(510, 485);
+            this.selectWeapon3btn.Name = "selectWeapon3btn";
+            this.selectWeapon3btn.Size = new System.Drawing.Size(131, 48);
+            this.selectWeapon3btn.TabIndex = 24;
+            this.selectWeapon3btn.Text = "Select";
+            this.selectWeapon3btn.UseVisualStyleBackColor = false;
+            this.selectWeapon3btn.Click += new System.EventHandler(this.selectWeapon3btn_Click);
+            // 
+            // selectWeapon2btn
+            // 
+            this.selectWeapon2btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.selectWeapon2btn.Location = new System.Drawing.Point(340, 485);
+            this.selectWeapon2btn.Name = "selectWeapon2btn";
+            this.selectWeapon2btn.Size = new System.Drawing.Size(131, 48);
+            this.selectWeapon2btn.TabIndex = 23;
+            this.selectWeapon2btn.Text = "Select";
+            this.selectWeapon2btn.UseVisualStyleBackColor = false;
+            this.selectWeapon2btn.Click += new System.EventHandler(this.selectWeapon2btn_Click);
+            // 
+            // selectWeapon1btn
+            // 
+            this.selectWeapon1btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.selectWeapon1btn.Location = new System.Drawing.Point(178, 485);
+            this.selectWeapon1btn.Name = "selectWeapon1btn";
+            this.selectWeapon1btn.Size = new System.Drawing.Size(131, 48);
+            this.selectWeapon1btn.TabIndex = 22;
+            this.selectWeapon1btn.Text = "Select";
+            this.selectWeapon1btn.UseVisualStyleBackColor = false;
+            this.selectWeapon1btn.Click += new System.EventHandler(this.selectWeapon1btn_Click);
+            // 
+            // disposePotionbtn5
+            // 
+            this.disposePotionbtn5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposePotionbtn5.Location = new System.Drawing.Point(672, 249);
+            this.disposePotionbtn5.Name = "disposePotionbtn5";
+            this.disposePotionbtn5.Size = new System.Drawing.Size(131, 48);
+            this.disposePotionbtn5.TabIndex = 21;
+            this.disposePotionbtn5.Text = "Dispose";
+            this.disposePotionbtn5.UseVisualStyleBackColor = false;
+            this.disposePotionbtn5.Click += new System.EventHandler(this.disposePotionbtn5_Click);
+            // 
+            // disposePotionbtn4
+            // 
+            this.disposePotionbtn4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposePotionbtn4.Location = new System.Drawing.Point(505, 249);
+            this.disposePotionbtn4.Name = "disposePotionbtn4";
+            this.disposePotionbtn4.Size = new System.Drawing.Size(131, 48);
+            this.disposePotionbtn4.TabIndex = 20;
+            this.disposePotionbtn4.Text = "Dispose";
+            this.disposePotionbtn4.UseVisualStyleBackColor = false;
+            this.disposePotionbtn4.Click += new System.EventHandler(this.disposePotionbtn4_Click);
+            // 
+            // disposePotionbtn3
+            // 
+            this.disposePotionbtn3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposePotionbtn3.Location = new System.Drawing.Point(343, 249);
+            this.disposePotionbtn3.Name = "disposePotionbtn3";
+            this.disposePotionbtn3.Size = new System.Drawing.Size(131, 48);
+            this.disposePotionbtn3.TabIndex = 19;
+            this.disposePotionbtn3.Text = "Dispose";
+            this.disposePotionbtn3.UseVisualStyleBackColor = false;
+            this.disposePotionbtn3.Click += new System.EventHandler(this.disposePotionbtn3_Click);
+            // 
+            // disposePotionbtn2
+            // 
+            this.disposePotionbtn2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposePotionbtn2.Location = new System.Drawing.Point(178, 249);
+            this.disposePotionbtn2.Name = "disposePotionbtn2";
+            this.disposePotionbtn2.Size = new System.Drawing.Size(131, 48);
+            this.disposePotionbtn2.TabIndex = 18;
+            this.disposePotionbtn2.Text = "Dispose";
+            this.disposePotionbtn2.UseVisualStyleBackColor = false;
+            this.disposePotionbtn2.Click += new System.EventHandler(this.disposePotionbtn2_Click);
+            // 
+            // disposePotionbtn1
+            // 
+            this.disposePotionbtn1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposePotionbtn1.Location = new System.Drawing.Point(16, 249);
+            this.disposePotionbtn1.Name = "disposePotionbtn1";
+            this.disposePotionbtn1.Size = new System.Drawing.Size(131, 48);
+            this.disposePotionbtn1.TabIndex = 17;
+            this.disposePotionbtn1.Text = "Dispose";
+            this.disposePotionbtn1.UseVisualStyleBackColor = false;
+            this.disposePotionbtn1.Click += new System.EventHandler(this.disposePotionbtn1_Click);
+            // 
+            // usePotion5btn
+            // 
+            this.usePotion5btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usePotion5btn.Location = new System.Drawing.Point(672, 183);
+            this.usePotion5btn.Name = "usePotion5btn";
+            this.usePotion5btn.Size = new System.Drawing.Size(131, 48);
+            this.usePotion5btn.TabIndex = 16;
+            this.usePotion5btn.Text = "Use Potion";
+            this.usePotion5btn.UseVisualStyleBackColor = false;
+            this.usePotion5btn.Click += new System.EventHandler(this.usePotion5btn_Click);
+            // 
+            // usePotion4btn
+            // 
+            this.usePotion4btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usePotion4btn.Location = new System.Drawing.Point(505, 183);
+            this.usePotion4btn.Name = "usePotion4btn";
+            this.usePotion4btn.Size = new System.Drawing.Size(131, 48);
+            this.usePotion4btn.TabIndex = 15;
+            this.usePotion4btn.Text = "Use Potion";
+            this.usePotion4btn.UseVisualStyleBackColor = false;
+            this.usePotion4btn.Click += new System.EventHandler(this.usePotion4btn_Click);
+            // 
+            // usePotion3btn
+            // 
+            this.usePotion3btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usePotion3btn.Location = new System.Drawing.Point(343, 183);
+            this.usePotion3btn.Name = "usePotion3btn";
+            this.usePotion3btn.Size = new System.Drawing.Size(131, 48);
+            this.usePotion3btn.TabIndex = 14;
+            this.usePotion3btn.Text = "Use Potion";
+            this.usePotion3btn.UseVisualStyleBackColor = false;
+            this.usePotion3btn.Click += new System.EventHandler(this.usePotion3btn_Click);
+            // 
+            // usePotion2btn
+            // 
+            this.usePotion2btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usePotion2btn.Location = new System.Drawing.Point(178, 183);
+            this.usePotion2btn.Name = "usePotion2btn";
+            this.usePotion2btn.Size = new System.Drawing.Size(131, 48);
+            this.usePotion2btn.TabIndex = 13;
+            this.usePotion2btn.Text = "Use Potion";
+            this.usePotion2btn.UseVisualStyleBackColor = false;
+            this.usePotion2btn.Click += new System.EventHandler(this.usePotion2btn_Click);
+            // 
+            // usePotion1btn
+            // 
+            this.usePotion1btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.usePotion1btn.Location = new System.Drawing.Point(16, 183);
+            this.usePotion1btn.Name = "usePotion1btn";
+            this.usePotion1btn.Size = new System.Drawing.Size(131, 48);
+            this.usePotion1btn.TabIndex = 12;
+            this.usePotion1btn.Text = "Use Potion";
+            this.usePotion1btn.UseVisualStyleBackColor = false;
+            this.usePotion1btn.Click += new System.EventHandler(this.usePotion1btn_Click);
+            // 
+            // selectedWeaponSlot
+            // 
+            this.selectedWeaponSlot.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.selectedWeaponSlot.BackColor = System.Drawing.Color.White;
+            this.selectedWeaponSlot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.selectedWeaponSlot.Location = new System.Drawing.Point(18, 357);
+            this.selectedWeaponSlot.Name = "selectedWeaponSlot";
+            this.selectedWeaponSlot.Size = new System.Drawing.Size(131, 108);
+            this.selectedWeaponSlot.TabIndex = 7;
             // 
             // weaponSlot4
             // 
             this.weaponSlot4.BackColor = System.Drawing.Color.White;
             this.weaponSlot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponSlot4.Location = new System.Drawing.Point(510, 357);
+            this.weaponSlot4.Location = new System.Drawing.Point(677, 357);
             this.weaponSlot4.Name = "weaponSlot4";
             this.weaponSlot4.Size = new System.Drawing.Size(128, 108);
-            this.weaponSlot4.TabIndex = 10;
+            this.weaponSlot4.TabIndex = 11;
             // 
             // weaponSlot3
             // 
             this.weaponSlot3.BackColor = System.Drawing.Color.White;
             this.weaponSlot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponSlot3.Location = new System.Drawing.Point(343, 357);
+            this.weaponSlot3.Location = new System.Drawing.Point(510, 357);
             this.weaponSlot3.Name = "weaponSlot3";
             this.weaponSlot3.Size = new System.Drawing.Size(128, 108);
-            this.weaponSlot3.TabIndex = 9;
+            this.weaponSlot3.TabIndex = 10;
             // 
             // weaponSlot2
             // 
             this.weaponSlot2.BackColor = System.Drawing.Color.White;
             this.weaponSlot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponSlot2.Location = new System.Drawing.Point(183, 357);
+            this.weaponSlot2.Location = new System.Drawing.Point(343, 357);
             this.weaponSlot2.Name = "weaponSlot2";
             this.weaponSlot2.Size = new System.Drawing.Size(128, 108);
-            this.weaponSlot2.TabIndex = 8;
+            this.weaponSlot2.TabIndex = 9;
+            // 
+            // weaponSlot1
+            // 
+            this.weaponSlot1.BackColor = System.Drawing.Color.White;
+            this.weaponSlot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponSlot1.Location = new System.Drawing.Point(183, 357);
+            this.weaponSlot1.Name = "weaponSlot1";
+            this.weaponSlot1.Size = new System.Drawing.Size(128, 108);
+            this.weaponSlot1.TabIndex = 8;
             // 
             // weaponSectionLabel
             // 
@@ -277,60 +468,49 @@
             this.btnCloseInv.UseVisualStyleBackColor = false;
             this.btnCloseInv.Click += new System.EventHandler(this.closeInv);
             // 
-            // usePotion1btn
+            // disposeWeapon1btn
             // 
-            this.usePotion1btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usePotion1btn.Location = new System.Drawing.Point(16, 183);
-            this.usePotion1btn.Name = "usePotion1btn";
-            this.usePotion1btn.Size = new System.Drawing.Size(131, 48);
-            this.usePotion1btn.TabIndex = 12;
-            this.usePotion1btn.Text = "Use Potion";
-            this.usePotion1btn.UseVisualStyleBackColor = false;
-            this.usePotion1btn.Click += new System.EventHandler(this.usePotion1btn_Click);
+            this.disposeWeapon1btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposeWeapon1btn.Location = new System.Drawing.Point(178, 544);
+            this.disposeWeapon1btn.Name = "disposeWeapon1btn";
+            this.disposeWeapon1btn.Size = new System.Drawing.Size(131, 48);
+            this.disposeWeapon1btn.TabIndex = 27;
+            this.disposeWeapon1btn.Text = "Dispose";
+            this.disposeWeapon1btn.UseVisualStyleBackColor = false;
+            this.disposeWeapon1btn.Click += new System.EventHandler(this.disposeWeapon1btn_Click);
             // 
-            // usePotion2btn
+            // disposeWeapon2btn
             // 
-            this.usePotion2btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usePotion2btn.Location = new System.Drawing.Point(178, 183);
-            this.usePotion2btn.Name = "usePotion2btn";
-            this.usePotion2btn.Size = new System.Drawing.Size(131, 48);
-            this.usePotion2btn.TabIndex = 13;
-            this.usePotion2btn.Text = "Use Potion";
-            this.usePotion2btn.UseVisualStyleBackColor = false;
-            this.usePotion2btn.Click += new System.EventHandler(this.usePotion2btn_Click);
+            this.disposeWeapon2btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposeWeapon2btn.Location = new System.Drawing.Point(340, 545);
+            this.disposeWeapon2btn.Name = "disposeWeapon2btn";
+            this.disposeWeapon2btn.Size = new System.Drawing.Size(131, 48);
+            this.disposeWeapon2btn.TabIndex = 28;
+            this.disposeWeapon2btn.Text = "Dispose";
+            this.disposeWeapon2btn.UseVisualStyleBackColor = false;
+            this.disposeWeapon2btn.Click += new System.EventHandler(this.disposeWeapon2btn_Click);
             // 
-            // usePotion3btn
+            // disposeWeapon3btn
             // 
-            this.usePotion3btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usePotion3btn.Location = new System.Drawing.Point(343, 183);
-            this.usePotion3btn.Name = "usePotion3btn";
-            this.usePotion3btn.Size = new System.Drawing.Size(131, 48);
-            this.usePotion3btn.TabIndex = 14;
-            this.usePotion3btn.Text = "Use Potion";
-            this.usePotion3btn.UseVisualStyleBackColor = false;
-            this.usePotion3btn.Click += new System.EventHandler(this.usePotion3btn_Click);
+            this.disposeWeapon3btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposeWeapon3btn.Location = new System.Drawing.Point(510, 545);
+            this.disposeWeapon3btn.Name = "disposeWeapon3btn";
+            this.disposeWeapon3btn.Size = new System.Drawing.Size(131, 48);
+            this.disposeWeapon3btn.TabIndex = 29;
+            this.disposeWeapon3btn.Text = "Dispose";
+            this.disposeWeapon3btn.UseVisualStyleBackColor = false;
+            this.disposeWeapon3btn.Click += new System.EventHandler(this.disposeWeapon3btn_Click);
             // 
-            // usePotion4btn
+            // disposeWeapon4btn
             // 
-            this.usePotion4btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usePotion4btn.Location = new System.Drawing.Point(505, 183);
-            this.usePotion4btn.Name = "usePotion4btn";
-            this.usePotion4btn.Size = new System.Drawing.Size(131, 48);
-            this.usePotion4btn.TabIndex = 15;
-            this.usePotion4btn.Text = "Use Potion";
-            this.usePotion4btn.UseVisualStyleBackColor = false;
-            this.usePotion4btn.Click += new System.EventHandler(this.usePotion4btn_Click);
-            // 
-            // usePotion5btn
-            // 
-            this.usePotion5btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.usePotion5btn.Location = new System.Drawing.Point(672, 183);
-            this.usePotion5btn.Name = "usePotion5btn";
-            this.usePotion5btn.Size = new System.Drawing.Size(131, 48);
-            this.usePotion5btn.TabIndex = 16;
-            this.usePotion5btn.Text = "Use Potion";
-            this.usePotion5btn.UseVisualStyleBackColor = false;
-            this.usePotion5btn.Click += new System.EventHandler(this.usePotion5btn_Click);
+            this.disposeWeapon4btn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.disposeWeapon4btn.Location = new System.Drawing.Point(677, 544);
+            this.disposeWeapon4btn.Name = "disposeWeapon4btn";
+            this.disposeWeapon4btn.Size = new System.Drawing.Size(131, 48);
+            this.disposeWeapon4btn.TabIndex = 30;
+            this.disposeWeapon4btn.Text = "Dispose";
+            this.disposeWeapon4btn.UseVisualStyleBackColor = false;
+            this.disposeWeapon4btn.Click += new System.EventHandler(this.disposeWeapon4btn_Click);
             // 
             // FrmInventory
             // 
@@ -370,11 +550,11 @@
         private System.Windows.Forms.ProgressBar progressBarStrength;
         private System.Windows.Forms.ProgressBar progressBarHealth;
         private System.Windows.Forms.Label potionSectionLabel;
-        private System.Windows.Forms.Panel weaponSlot1;
-        private System.Windows.Forms.Panel weaponSlot5;
+        private System.Windows.Forms.Panel selectedWeaponSlot;
         private System.Windows.Forms.Panel weaponSlot4;
         private System.Windows.Forms.Panel weaponSlot3;
         private System.Windows.Forms.Panel weaponSlot2;
+        private System.Windows.Forms.Panel weaponSlot1;
         private System.Windows.Forms.Label weaponSectionLabel;
         private System.Windows.Forms.Button btnCloseInv;
         private System.Windows.Forms.Button usePotion5btn;
@@ -382,5 +562,19 @@
         private System.Windows.Forms.Button usePotion3btn;
         private System.Windows.Forms.Button usePotion2btn;
         private System.Windows.Forms.Button usePotion1btn;
+        private System.Windows.Forms.Button disposePotionbtn2;
+        private System.Windows.Forms.Button disposePotionbtn1;
+        private System.Windows.Forms.Button disposePotionbtn5;
+        private System.Windows.Forms.Button disposePotionbtn4;
+        private System.Windows.Forms.Button disposePotionbtn3;
+        private System.Windows.Forms.Button selectWeapon4btn;
+        private System.Windows.Forms.Button selectWeapon3btn;
+        private System.Windows.Forms.Button selectWeapon2btn;
+        private System.Windows.Forms.Button selectWeapon1btn;
+        private System.Windows.Forms.Label selectWeaponLabel;
+        private System.Windows.Forms.Button disposeWeapon3btn;
+        private System.Windows.Forms.Button disposeWeapon2btn;
+        private System.Windows.Forms.Button disposeWeapon1btn;
+        private System.Windows.Forms.Button disposeWeapon4btn;
     }
 }

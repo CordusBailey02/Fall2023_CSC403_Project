@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Fall2020_CSC403_Project.code {
         public int Health { get; set; }
         public int DodgeBuff { get; private set; }
         public bool hasDodgeBuff { get; set; }
+        public bool isDead { get; set; }
         public int MaxHealth { get; private set; }
         public float strength;
 
